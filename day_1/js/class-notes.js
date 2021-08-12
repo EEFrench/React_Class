@@ -41,7 +41,7 @@
 //   getWeatherForCity(search)
 
   //Getting a list of movies from OMDB API using a search term
-  const apiKey = 'PUT YOUR OWN API KEY HERE'
+  const apiKey = 'ADD API KEY HERE'
 const searchTerm = 'batman'
 
 fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
@@ -49,10 +49,10 @@ fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
   .then((movieData) => console.log(movieData))
 
   //Getting detailed information about a movie from OMDB API using its id
-  const apiKey = 'PUT YOUR OWN API KEY HERE'
-const movieID = 'tt0372784';
+//   const apiKey = 'ADD API KEY HERE'
+// const movieID = 'tt0372784';
 
-fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movieID}`)
-  .then((res) => res.json())
-  .then((movieData) => console.log(movieData))
+// fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movieID}`)
+//   .then((res) => res.json())
+//   .then((movieData) => console.log(movieData))
 

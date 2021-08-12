@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2</title>
+</head>
+<body>
+    const DayTwo = () => (
+    <div className="container py-5">
+        {/* Page Title */}
+        <div className="row">
+            <div className="col text-center">
+                <h1>Day 2</h1>
+            </div>
+        </div>
+
+        {/* Concepts */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Concepts</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Take Home Review</li>
+                    <li>Rendering UI</li>
+                    <li>JSX</li>
+                    <li>Components</li>
+                    <li>Props</li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Rendering UI*/}
+        <div className="row section">
+            <aside className="col">
+                <h2>Rendering UI</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Virtual DOM</li>
+                    <li>React Elements</li>
+                    <li>ReactDOM</li>
+                    <li>JSX</li>
+                    <li>Additional Reading
+                        <ul className="nested-points">
+                            <li>
+                                <a href="https://bitsofco.de/understanding-the-virtual-dom/" target="_blank" rel="noreferrer">
+                                    Understanding the Virtual DOM
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noreferrer">
+                                    Introduction to JSX
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://reactjs.org/docs/rendering-elements.html" target="_blank" rel="noreferrer">
+                                    Rendering Elements
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://reactjs.org/docs/jsx-in-depth.html" target="_blank" rel="noreferrer">
+                                    JSX in Depth
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Components */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Components</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Function components</li>
+                    <li>Class components</li>
+                    <li>Rendering components</li>
+                    <li>Composing components</li>
+                    <li>Additional reading
+                        <ul className="nested-points">
+                            <li>
+                                <a href="https://www.w3schools.com/react/react_components.asp" target="_blank" rel="noreferrer">
+                                    React Components
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://reactjs.org/docs/fragments.html" target="_blank" rel="noreferrer">
+                                    Fragments
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Props */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Props</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Data flow
+                        <br/>
+                        <img src="https://labs.tadigital.com/wp-content/uploads/2020/03/logo.png" alt="Data flow diagram"/>
+                    </li>
+                    <li>The <code>children</code> prop</li>
+                    <li>The <code>style</code> prop</li>
+                    <li>The <code>className</code> prop</li>
+                    <li>Additional reading
+                        <ul className="nested-points">
+                            <li>
+                                <a href="https://www.w3schools.com/react/react_props.asp" target="_blank" rel="noreferrer">
+                                    React Props
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="https://reactjs.org/docs/typechecking-with-proptypes.html" target="_blank" rel="noreferrer">
+                                    Type checking with PropTypes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://blog.bitsrc.io/understanding-react-default-props-5c50401ed37d" target="_blank" rel="noreferrer">
+                                    Understanding default props
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* In Class Challenge */}
+        <div className="row section">
+            <aside className="col">
+                <h2>In Class Challenge</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Create a new component called <code>MovieCard</code>.</li>
+                    <li>The component should take the following props: <code>title</code>, <code>type</code>, <code>posterUrl</code>.</li>
+                    <li>The component should render UI as shown below (use style or className for styling).
+                        <br/>
+                        <img src={`${process.env.PUBLIC_URL}/img/movie_project/movie_card.png`} alt="Mockup of movie card component."/>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Take Home Challenge */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Take Home Challenge</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Create a new component called <code>MovieDetails</code>.</li>
+                    <li>The component should take the following props: <code>posterUrl</code>, <code>title</code>, <code>rated</code>, <code>runtime</code>, <code>genre</code>, <code>plot</code>, <code>actors</code>, <code>rating</code>.</li>
+                    <li>The component should render UI as shown below (use styles or className for styling).
+                        <br/>
+                        <img src={`${process.env.PUBLIC_URL}/img/movie_project/movie_details.png`} alt="Mockup of movie detail component." />
+                    </li>
+                    <li>Bonus
+                        <ul className="nested-points">
+                            <li>Add type checking to components using PropTypes.</li>
+                            <li>Add default values for props.</li>
+                            <li>Break components down into smaller components and use composition where it makes sense.</li>
+                            <li>The OMDb API provides a lot more information about movies than is included in the mockup of the MovieDetails component. Feel free to add more props to the MovieDetails component and render them.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+    </div>
+)
+
+export default DayTwo;
+</body>
+</html>

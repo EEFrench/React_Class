@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day3</title>
+</head>
+<body>
+    const DayThree = () => (
+    <div className="container py-5">
+        {/* Page Title */}
+        <div className="row">
+            <div className="col text-center">
+                <h1>Day 3</h1>
+            </div>
+        </div>
+        {/* Concepts */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Concepts</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Take Home Review</li>
+                    <li>State</li>
+                    <li>Component Lifecycle</li>
+                    <li>Handling Events</li>
+                    <li>Conditional Rendering</li>
+                    <li>Rendering Lists</li>
+                </ul>
+            </main>
+        </div>
+
+        {/* State */}
+        <div className="row section">
+            <aside className="col">
+                <h2>State</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://www.geeksforgeeks.org/reactjs-state-react/" target="_blank" rel="noreferrer">
+                            Working with state
+                        </a>
+                    </li>
+                    <li>The <code>this.state</code> object</li>
+                    <li>Changing the state with <code>this.setState()</code></li>
+                    <li>Additional Reading
+                        <ul className="nested-points">
+                            <li>
+                                <a href="https://reactjs.org/docs/state-and-lifecycle.html" target="_blank" rel="noreferrer">
+                                    State and Lifecycle
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://medium.com/@wisecobbler/using-a-function-in-setstate-instead-of-an-object-1f5cfd6e55d1" target="_blank" rel="noreferrer">
+                                    Using a function in setState
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://medium.com/@thejasonfile/using-the-spread-operator-in-react-setstate-c8a14fc51be1" target="_blank" rel="noreferrer">
+                                    Using the spread operator in setState
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Component Lifecycle */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Component Lifecycle</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://programmingwithmosh.com/javascript/react-lifecycle-methods/" target="_blank" rel="noreferrer">
+                            React Lifecycle Methods
+                        </a>
+                        <ul className="nested-points">
+                            <li><code>componentDidMount</code></li>
+                            <li><code>componentDidUpdate</code></li>
+                            <li><code>componentWillUnmount</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Additional Reading
+                        <ul className="nested-points">
+                            <li>
+                                <a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="noreferrer">
+                                    Visualization of the lifecycle methods
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://reactjs.org/docs/react-component.html" target="_blank" rel="noreferrer">
+                                    Component Lifecycle
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* In Class Challenge */}
+        <div className="row section">
+            <aside className="col">
+                <h2>In Class Challenge</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Convert the App component into a class component.</li>
+                    <li>Inside App, add a state object with the following properties: <code>search</code>, <code>isLoading</code>, <code>movies</code>, and <code>error</code>.</li>
+                    <li>Initialize <code>search</code> to some search term e.g. 'batman'.</li>
+                    <li>
+                        Inside the <code>componentDidMount</code> lifecycle method:
+                        <ul className="nested-points">
+                            <li>Set <code>isLoading</code> to true.</li>
+                            <li>Fetch the movie data for the current search term using the utility function written in a previous lesson.</li>
+                            <li>If data is fetched sucessfully, save the movie data in <code>this.state.movies</code>, set <code>this.state.error</code> to null, and set <code>this.state.isLoading</code> to false.</li>
+                            <li>If an error occurs, eave the error in <code>this.state.error</code>, set <code>this.state.movies</code> to an empty array, and set <code>this.state.isLoading</code> to false.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Conditional Rendering */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Conditional Rendering</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Inline <code>if</code> with <code>&amp;&amp;</code> operator</li>
+                    <li>Inline <code>if-else</code> with ternary operator</li>
+                    <li>Nullish coalescing operator <code>??</code></li>
+                    <li>
+                        <a href="https://reactjs.org/docs/conditional-rendering.html" target="_blank" rel="noreferrer">
+                            Additional reading
+                        </a>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* In Class Challenge */}
+        <div className="row section">
+            <aside className="col">
+                <h2>In Class Challenge</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        Use conditional rendering to
+                        <ul className="nested-points">
+                            <li>show a "Loading" message or spinner when <code>this.state.isLoading</code> is true</li>
+                            <li>show an error message if there is an error</li>
+                            <li>show a success message if data was fetched successfully</li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Rendering Lists */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Rendering Lists</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://reactjs.org/docs/lists-and-keys.html" target="_blank" rel="noreferrer">
+                            Lists and Keys
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://programmingwithmosh.com/react/why-do-i-need-keys-in-react-lists/" target="_blank" rel="noreferrer">
+                            Why do we need keys
+                        </a>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Additional Reading */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Additional Reading</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://create-react-app.dev/docs/adding-custom-environment-variables/" target="_blank" rel="noreferrer">
+                            Adding custom environment variables
+                        </a>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+
+        {/* Take Home Challenge */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Take Home Challenge</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Create a new component called <code>MovieList</code></li>
+                    <li>The component should take a <code>movies</code> props which is an array of movie objects.</li>
+                    <li>The component should render a list of <code>MovieCard</code> components as shown below.</li>
+                    <li><img src={`${process.env.PUBLIC_URL}/img/movie_project/movie_list.png`}/></li>
+                </ul>
+            </main>
+        </div>
+    </div>
+);
+
+export default DayThree;
+</body>
+</html>

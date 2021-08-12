@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1</title>
+</head>
+<body>
+    import React from "react";
+
+const sections = [
+  {
+    title: "Concepts",
+    points: [
+      "Introductions",
+      "Required Tools",
+      "ES6 Review",
+      "In Class Challenge",
+      "In Class Challenge",
+      "React Ecosystem",
+      "Create React App",
+      "Take Home Challenge",
+    ],
+  },
+  {
+    title: "Required Tools",
+    points: [
+      "Chrome (preferred)",
+      {
+        type: "link",
+        text: "Visual Studio Code",
+        link: "https://code.visualstudio.com/",
+      },
+      {
+        type: "link",
+        text: "Git (and Git Bash for Windows)",
+        link: "https://github.com/git-guides/install-git",
+      },
+      { type: "link", text: "NodeJS", link: "https://nodejs.org/" },
+    ],
+  },
+  {
+    title: "ES6 Review",
+    points: [
+      {
+        type: "link",
+        text: `“let” and “const”`,
+        link: "https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/",
+      },
+      {
+        type: "link",
+        text: "Arrow functions",
+        link: "https://www.w3schools.com/js/js_arrow_function.asp",
+      },
+      {
+        type: "link",
+        text: "Template literals",
+        link: "https://www.w3schools.com/js/js_string_templates.asp",
+      },
+      {
+        type: "link",
+        text: "Object destructuring",
+        link: "https://dmitripavlutin.com/javascript-object-destructuring/",
+      },
+      {
+        type: "link",
+        text: "Array destructuring",
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment",
+      },
+
+      // ...rest and spread operator
+      {
+        type: "link",
+        text: "Default function parameters",
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters",
+      },
+      {
+        type: "link",
+        text: "Classes",
+        link: "https://www.w3schools.com/js/js_classes.asp",
+      },
+      {
+        type: "link",
+        text: "Array methods",
+        link: "https://www.programiz.com/javascript/library/array",
+      },
+      {
+        type: "link",
+        text: "Class inheritance",
+        link: "https://pietschsoft.com/post/2020/01/02/basics-javascript-class-inheritance",
+      },
+      {
+        type: "link",
+        text: "Modules",
+        link: "https://www.tutorialspoint.com/es6/es6_modules.htm/",
+      },
+      {
+        type: "link",
+        text: "Promises",
+        link: "https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/",
+      },
+      {
+        type: "link",
+        text: "Async and Await",
+        link: "https://javascript.info/async-await",
+      },
+      {
+        type: "link",
+        text: "Fetch",
+        link: "https://www.sitepoint.com/introduction-to-the-fetch-api/",
+      },
+    ],
+  },
+];
+
+const getContent = (point: any) => {
+  if (typeof point === "object") {
+    switch (point.type) {
+      case "link":
+        return (
+          <a href={point.link} target="_blank" rel="noreferrer">
+            {point.text}
+          </a>
+        );
+    }
+  }
+  return point;
+};
+
+const DayOne = () => (
+  <div className="container py-5">
+    {/* Page Title */}
+    <div className="row">
+      <div className="col text-center">
+        <h1>Day 1</h1>
+      </div>
+    </div>
+
+    {sections.map((section, index) => (
+      <div key={index} className="row section">
+        <aside className="col">
+          <h2>{section.title}</h2>
+        </aside>
+        <main className="col-9">
+          <ul className="points">
+            {section.points.map((point, index) => (
+              <li key={index}>{getContent(point)}</li>
+            ))}
+          </ul>
+        </main>
+      </div>
+    ))}
+
+    {/* In Class Challenge */}
+    <div className="row section">
+      <aside className="col">
+        <h2>In Class Challenge</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            Sign up for an OMDb API key at{" "}
+            <a href="http://www.omdbapi.com" target="_blank" rel="noreferrer">
+              http://www.omdbapi.com
+            </a>
+            .
+          </li>
+          <br />
+          <li>
+            Write an arrow function called <code>getMoviesBySearchTerm</code>{" "}
+            that takes a search string as input and uses <code>fetch</code> and{" "}
+            <code>async/await</code> to get an array of movies with a matching
+            title from OMDb API.
+          </li>
+          <br />
+          <li>
+            Write another arrow function called <code>getMovieDetailsById</code>{" "}
+            that takes a valid OMDb movie id as input and uses{" "}
+            <code>fetch</code> and <code>async/await</code> to get an object of
+            detailed information about the specified movie.
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    {/* The React Ecosystem */}
+    <div className="row section">
+      <aside className="col">
+        <h2>The React Ecosystem</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            Node
+            <ul className="nested-points">
+              <li>
+                <a
+                  href="https://www.codecademy.com/articles/what-is-node"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  What is Node?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.w3schools.com/nodejs/nodejs_intro.asp"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Node.js Introduction
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            NPM
+            <ul className="nested-points">
+              <li>
+                <a
+                  href="https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  What is npm?
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://nodejs.dev/learn/an-introduction-to-the-npm-package-manager"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  npm commands
+                </a>
+
+                <ul className="nested-points">
+                  <li>
+                    Create an npm package
+                    <pre>npm init</pre>
+                  </li>
+                  <li>
+                    Install a dependency
+                    <pre>npm install [Name of Package]</pre>
+                  </li>
+                  <li>
+                    Install a dependency for development only
+                    <pre>npm install --save-dev [Name of Package]</pre>
+                  </li>
+                  <li>
+                    Run a script
+                    <pre>npm run [script]</pre>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  npm vs npx
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            Babel
+            <ul className="nested-points">
+              <li>
+                <a
+                  href="https://babeljs.io/repl"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Try out Babel
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://babeljs.io/docs/en/usage"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Usage Guide
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://flaviocopes.com/babel/#introduction-to-babel"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  A short and simple guide to Babel
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Webpack
+            <ul className="nested-points">
+              <li>
+                <a
+                  href="https://www.freecodecamp.org/news/how-to-build-modern-applications-with-webpack-c81ccf6dd54f/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Introduction to Webpack
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            ESLint
+            <ul className="nested-points">
+              <li>
+                <a
+                  href="https://eslint.org/demo"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Try out ESLint
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    {/* Create React App */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Create React App</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            <a
+              href="https://reactjs.org/docs/create-a-new-react-app.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Creating a new React app
+            </a>
+            <pre>npx create-react-app [App Name]</pre>
+          </li>
+        </ul>
+      </main>
+    </div>
+    {/* Take Home Challenge */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Take Home Challenge</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            Create an empty GitHub repository (without a README) and clone the
+            repository to your computer.
+          </li>
+          <br />
+          <li>
+            Inside the empty repository, initialize a new React application
+            using the <code>create-react-app</code> command.
+          </li>
+          <br />
+          <li>
+            Inside the <em>src/</em> folder, create a file called{" "}
+            <em>utils.js</em>.
+          </li>
+          <br />
+          <li>
+            Copy the functions from your <code>In Class Challenge</code> into
+            <em>utils.js</em> and export the functions so they can be imported
+            and used in other files. (Make sure to delete your API key for now
+            so you don’t commit it to GitHub. We’ll fix this later.)
+          </li>
+          <br />
+          <li>
+            Launch the development server using the <code>npm run start</code>{" "}
+            command to confirm that the boilerplate app works.
+          </li>
+          <br />
+          <li>Commit your changes and push them to your GitHub repository.</li>
+        </ul>
+      </main>
+    </div>
+  </div>
+);
+
+export default DayOne;
+</body>
+</html>
