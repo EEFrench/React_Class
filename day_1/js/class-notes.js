@@ -22,34 +22,34 @@
 //     console.log('This is the last line of code in this function');
 //   }
   
-//   let search = prompt('City name:');
-//   getWeatherForCity(search)
+  // let search = prompt('City name:');
+  // getWeatherForCity(search)
 
   //Getting weather data using async and await
-//   const getWeatherForCity = async (city) => {
-//     try {
-//       let response = await fetch(`https://goweather.herokuapp.com/weather/${city}`);
-//       let weather = await response.json();
-//       console.log(`The weather for ${city}`, weather);
-//       console.log('This is the last line of code in this function');
-//     } catch(error) {
-//       console.log("ERROR:", error)
-//     }
-//   }
+  const getWeatherForCity = async (city) => {
+    try {
+      let response = await fetch(`https://goweather.herokuapp.com/weather/${city}`);
+      let weather = await response.json();
+      console.log(`The weather for ${city}`, weather);
+      console.log('This is the last line of code in this function');
+    } catch(error) {
+      console.log("ERROR:", error)
+    }
+  }
   
-//   let search = prompt('City name:');
-//   getWeatherForCity(search)
+  let search = prompt('City name:');
+  getWeatherForCity(search)
 
   //Getting a list of movies from OMDB API using a search term
-  const apiKey = 'ADD API KEY HERE'
-const searchTerm = 'batman'
+//   const apiKey = '9edc6423'
+// const searchTerm = 'batman'
 
-fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
-  .then((res) => res.json())
-  .then((movieData) => console.log(movieData))
+// fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
+//   .then((res) => res.json())
+//   .then((movieData) => console.log(movieData))
 
-  //Getting detailed information about a movie from OMDB API using its id
-//   const apiKey = 'ADD API KEY HERE'
+//   Getting detailed information about a movie from OMDB API using its id
+//   const apiKey = '9edc6423'
 // const movieID = 'tt0372784';
 
 // fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movieID}`)
