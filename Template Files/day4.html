@@ -1,0 +1,178 @@
+const DayFour = () => (
+    <div className="container py-5">
+        {/* Page Title */}
+        <div className="row">
+            <div className="col text-center">
+                <h1>Day 4</h1>
+            </div>
+        </div>
+
+        {/* Concepts */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Concepts</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Take Home Review</li>
+                    <li>Forms</li>
+                    <li>Project File Structure</li>
+                    <li>Hosting on GitHub Pages</li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Events */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Events</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://reactjs.org/docs/handling-events.html" target="_blank" rel="noreferrer">
+                            Handling Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://reactjs.org/docs/faq-functions.html#how-do-i-bind-a-function-to-a-component-instance" target="_blank" rel="noreferrer">
+                            Binding the <code>this</code> keyword
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://reactjs.org/docs/faq-functions.html#how-do-i-pass-a-parameter-to-an-event-handler-or-callback" target="_blank" rel="noreferrer">
+                            Passing parameters to event handlers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dev.to/vadims4/passing-down-functions-in-react-4618">
+                            Passing functions as props
+                        </a>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* In Class Challenge */}
+        <div className="row section">
+            <aside className="col">
+                <h2>In Class Challenge</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Create a <code>Modal</code> component that has the following props: <code>show</code> (boolean), <code>onClose</code> (callback function), <code>children</code>.</li>
+                    <li>The modal should be generic and render whatever child components are nested inside it.</li>
+                    <li>Add a <code>MovieDetails</code> component nested inside the modal.</li>
+                    <li>Add event handlers on the <code>MovieCard</code>s such that clicking on a <code>MovieCard</code>
+                        <ul className="nested-points">
+                            <li>fetches detailed data about the selected movie</li>
+                            <li>updates the props passed to the <code>MovieDetails</code> component nested inside the modal with the new data</li>
+                            <li>shows the modal</li>
+                        </ul>
+                    </li>
+                    <li>The modal should have a close button with an event handler that calls the <code>onClose</code> prop passed in to hide the modal.</li>
+                    <li>The modal should render as shown below.</li>
+                    <li>
+                        <img src={`${process.env.PUBLIC_URL}/img/movie_project/detail_view_modal.png`} alt="Modal with movie details."/>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Forms */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Forms</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://reactjs.org/docs/forms.html" target="_blank" rel="noreferrer">
+                            Working With Forms
+                        </a>
+                    </li>
+                    <li>Controlled Components</li>
+                    <li>
+                        <a href="https://reactjs.org/docs/uncontrolled-components.html" target="_blank" rel="noreferrer">
+                            Uncontrolled Components
+                        </a>
+                        <ul className="nested-points">
+                            <li>Refs</li>
+                        </ul>
+                    </li>
+                    <li>Handling Multiple Inputs</li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Project File Structure */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Project File Structure</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://reactjs.org/docs/faq-structure.html#is-there-a-recommended-way-to-structure-react-projects" target="_blank" rel="noreferrer">
+                            Structuring Your Project
+                        </a>
+                        <ul className="nested-points">
+                            <li>Grouping by Feature</li>
+                            <li>Grouping by File Type</li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Hosting on GitHub Pages */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Hosting on GitHub Pages</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>
+                        <a href="https://create-react-app.dev/docs/deployment/#github-pages" target="_blank" rel="noreferrer">
+                            Deploying a React App to GitHub Pages
+                        </a>
+                        <ul className="nested-points">
+                            <li>Add <code>homepage</code> to <code>package.json</code></li>
+                            <li>Install <code>gh-pages</code> package</li>
+                            <li>Add <code>predeploy</code> and <code>deploy</code> scripts to <code>package.json</code></li>
+                            <li>Run <code>deploy</code> script</li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+
+        {/* Take Home Challenge */}
+        <div className="row section">
+            <aside className="col">
+                <h2>Take Home Challenge</h2>
+            </aside>
+            <main className="col-9">
+                <ul className="points">
+                    <li>Add a <code>SearchBar</code> component with a form and search button as shown below.</li>
+                    <li>
+                        <img src={`${process.env.PUBLIC_URL}/img/movie_project/search_bar.png`} alt="Search bar" />
+                    </li>
+                    <li>When a user searches for a new movie, the <code>MovieList</code> component should be updated with the new search results.</li>
+                    <li>
+                        Bonus
+                        <ul className="nested-points">
+                            <li>The OMDb API uses pagination and only returns 10 movie results per page.</li>
+                            <li>Add a <code>Paginator</code> as shown below that displays the page count and the current page.</li>
+                            <li>The paginator should also have buttons to display search results for the previous and next pages.</li>
+                            <li>
+                                <img src={`${process.env.PUBLIC_URL}/img/movie_project/paginator.png`} alt="Paginator" />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+    </div>
+)
+export default DayFour;

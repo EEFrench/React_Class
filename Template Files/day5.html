@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react day 5</title>
+</head>
+<body>
+  https://geekwiseacademy.github.io/react/static/js/course-content/DayFive.tsx  
+
+
+  <div className="container py-5">
+    {/* Page Title */}
+    <div className="row">
+      <div className="col text-center">
+        <h1>Day 5</h1>
+      </div>
+    </div>
+
+    {/* Concepts */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Concepts</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>Take Home Review</li>
+          <li>Styling Components</li>
+        </ul>
+      </main>
+    </div>
+
+    {/* Styling Components */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Styling Components</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>Inline styles</li>
+          <li>CSS stylesheets</li>
+          <li>
+            <a
+              href="https://styled-components.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Styled Components
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              CSS Modules
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://react-bootstrap.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              React Bootstrap
+            </a>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    {/* Take Challenge */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Take Home Challenge</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            Fork the the{" "}
+            <a
+              href="https://github.com/GeekwiseAcademy/react-contacts"
+              target="_blank"
+              rel="noreferrer"
+            >
+              react-contacts
+            </a>{" "}
+            project on GitHub.
+          </li>
+          <li>Clone your fork to your local machine.</li>
+          <li>
+            Run <code>npm install</code> to install all dependencies.
+          </li>
+          <li>
+            Use Styled Components, CSS Module, or React Bootstrap (or a
+            combination) to style the <code>ContactCard</code> and{" "}
+            <code>ContactsList</code> components as show in the mockups below:
+            <ul className="nested-points">
+              <li>
+                ContactCard
+                <img
+                  src={`${process.env.PUBLIC_URL}/img/contacts_project/contact_card.png`}
+                  alt="Contact card component."
+                />
+              </li>
+              <li>
+                ContactsList
+                <img
+                  src={`${process.env.PUBLIC_URL}/img/contacts_project/contacts_list.png`}
+                  alt="Contacts list component."
+                />
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </main>
+    </div>
+  </div>
+);
+
+export default DayFive;
+</body>
+</html>

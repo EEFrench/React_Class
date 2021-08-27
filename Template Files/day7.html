@@ -1,0 +1,237 @@
+const DaySeven = () => (
+  <div className="container py-5">
+    {/* Page Title */}
+    <div className="row">
+      <div className="col text-center">
+        <h1>Day 7</h1>
+      </div>
+    </div>
+
+    {/* Concepts */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Concepts</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>More Hooks</li>
+          <li>Context API</li>
+        </ul>
+      </main>
+    </div>
+
+    {/* More on Hooks */}
+    <div className="row section">
+      <aside className="col">
+        <h2>More on Hooks</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            Controlling When <code>useEffect()</code> Runs
+            <ul className="nested-points">
+              <li>Dependency List</li>
+              <li>Using Multiple Effects</li>
+              <li>
+                <a
+                  href="https://www.benmvp.com/blog/object-array-dependencies-react-useEffect-hook/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Object and Array Dependencies
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://reactjs.org/docs/hooks-reference.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Additional Hooks
+            </a>
+            <ul className="nested-points">
+              <li>
+                <code>useRef()</code>
+              </li>
+              <li>
+                <code>useLayoutEffect()</code>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://reactjs.org/docs/hooks-custom.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Creating Custom Hooks
+            </a>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    {/* Context API */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Context API</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            <a
+              href="https://reactjs.org/docs/context.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Intro to Context
+            </a>
+          </li>
+          <li>When to Use Context</li>
+          <li>
+            Creating a Context
+            <ul className="nested-points">
+              <li>
+                <code>createContext()</code>
+              </li>
+              <li>
+                <pre>
+                  {"const MyContext = createContext(/* some initial value */)"}
+                </pre>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Context Provider
+            <ul className="nested-points">
+              <li>
+                <pre>{"<MyContext.Provider value={/* some value */}>"}</pre>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Context Consumer
+            <ul className="nested-points">
+              <li>
+                <code>useContext()</code>
+                <pre>{"const value = useContext(MyContext)"}</pre>
+              </li>
+              <li>
+                Component.contextType
+                <pre>{`class MyComponent extend React.Component {
+    constructor(props) {
+        super(props)
+        
+        /* Access to context */
+        const value = this.context;
+    }
+
+    render() {
+        /* some JSX /*
+    }
+}
+
+MyComponent.contextType = MyContext;`}</pre>
+              </li>
+              <li>
+                Context.Consumer
+                <pre>{`const ParentComponent = () => {
+    return (
+        <MyContext.Consumer>
+        {
+            (value) => (
+                <ChildComponent someprop={value} />
+            )
+        }
+        </MyContext.Consumer>
+    )
+}
+`}</pre>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    {/* In Class Challenge */}
+    <div className="row section">
+      <aside className="col">
+        <h2>In Class Challenge</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            Create a context that provides the following values:
+            <ul className="nested-points">
+              <li>array of contacts</li>
+              <li>function to add a new contact to the array</li>
+              <li>
+                function to remove a contact from the array given an index
+              </li>
+            </ul>
+          </li>
+          <li>
+            Modify <code>ContactsList</code> to get the array of contacts from
+            the context.
+          </li>
+          <li>
+            Modify <code>ContactCreateForm</code> component to use the functions
+            provided by the context to create a new contact.
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    {/* Take Home Challenge */}
+    <div className="row section">
+      <aside className="col">
+        <h2>Take Home Challenge</h2>
+      </aside>
+      <main className="col-9">
+        <ul className="points">
+          <li>
+            Create a new context called AuthContext which provides the following
+            values:
+            <ul>
+              <li>The logged in user (initial value should be null).</li>
+              <li>
+                A login function which takes a username and password as input
+                and sets the username as the logged in user if the username and
+                password are correct. (In a real app, you would want to validate
+                the login credentials in a backend, but for now it's ok to just
+                hardcode some credentials in your frontend app).
+              </li>
+              <li>
+                A logout function which takes no inputs and sets the logged in
+                user to null.
+              </li>
+            </ul>
+          </li>
+          <li>
+            In the LoginForm component, uses the login function provided by the
+            AuthContext to sign-in a user when the form is submitted.
+          </li>
+          <li>
+            Use the AuthContext inside the App component to get the logged in
+            user.
+          </li>
+          <li>
+            Using conditional rendering:
+            <ul className="nested-points">
+              <li>render the LoginForm is there is no logged in user</li>
+              <li>
+                render the ContacsList and ContactCreateForm if there is a
+                logged in user
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </main>
+    </div>
+  </div>
+);
+
+export default DaySeven;
